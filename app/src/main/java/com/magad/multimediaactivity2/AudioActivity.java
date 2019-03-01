@@ -43,19 +43,19 @@ public class AudioActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
 
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.dhuha);
-        player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+
         switch (view.getId()) {
             case R.id.btn_Play:
-                player = new MediaPlayer();
 
+                player = new MediaPlayer();
                 player.setAudioStreamType(AudioManager.STREAM_MUSIC);
 
                 try {
                     player.setDataSource(this, uri);
                 } catch (IOException e) {
                     e.printStackTrace();
-                }catch (IllegalStateException o){
-
+                } catch (IllegalStateException e) {
+                    e.printStackTrace();
                 }
                 try {
                     player.prepare();
@@ -66,39 +66,31 @@ public class AudioActivity extends AppCompatActivity {
 
                 player.start();
 
-                disable(btnPlay,btnResume);
-                enable(btnStop,btnPause);
+                disable(btnPlay, btnResume);
+                enable(btnStop, btnPause);
 
                 break;
             case R.id.btn_Stop:
-                if (player.isPlaying() && player != null){
-                    player.stop();
-                    player.reset();
-                    player.release();
-                    disable(btnStop,btnPause,btnResume);
-                    enable(btnPlay);
+                player.stop();
+                player.reset();
+                player.release();
+                disable(btnStop, btnPause, btnResume);
+                enable(btnPlay);
 
-
-                }
 
                 break;
             case R.id.btn_Pause:
-                if(player.isPlaying() && player != null){
-
-
-                player.pause();
-                disable(btnPause,btnPlay);
-                enable(btnStop,btnResume);
+                if (player.isPlaying() && player != null) {
+                    player.pause();
+                    disable(btnPause, btnPlay);
+                    enable(btnStop, btnResume);
                 }
                 break;
             case R.id.btn_Resume:
-                if(player.isPlaying() && player != null){
-                    player.start();
+                player.start();
 
-                    disable(btnStop,btnPause);
-                    enable(btnPlay,btnResume);
-
-                }
+                disable(btnPlay, btnResume);
+                enable(btnStop, btnPause);
                 break;
         }
     }
