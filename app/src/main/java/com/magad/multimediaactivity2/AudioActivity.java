@@ -49,9 +49,8 @@ public class AudioActivity extends AppCompatActivity {
 
                 player = new MediaPlayer();
                 player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
                 try {
-                    player.setDataSource(this, uri);
+                    player.setDataSource(AudioActivity.this, uri);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (IllegalStateException e) {
@@ -77,8 +76,8 @@ public class AudioActivity extends AppCompatActivity {
                 disable(btnStop, btnPause, btnResume);
                 enable(btnPlay);
 
-
                 break;
+
             case R.id.btn_Pause:
                 if (player.isPlaying() && player != null) {
                     player.pause();
@@ -86,6 +85,7 @@ public class AudioActivity extends AppCompatActivity {
                     enable(btnStop, btnResume);
                 }
                 break;
+
             case R.id.btn_Resume:
                 player.start();
 
