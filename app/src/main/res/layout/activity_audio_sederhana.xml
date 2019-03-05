@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AudioSederhanaActivity">
+
+    <ImageButton
+        android:id="@+id/playing"
+        android:layout_width="@dimen/BTN"
+        android:layout_height="@dimen/BTN"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/play_button"
+        android:drawableBottom="@drawable/ic_play_arrow_black_24dp"
+        android:src="@android:drawable/ic_media_play" />
+
+    <ImageButton
+        android:id="@+id/stopping"
+        android:layout_width="@dimen/what"
+        android:layout_height="@dimen/what"
+        android:layout_above="@id/playing"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/stop"
+        android:drawableBottom="@drawable/ic_play_arrow_black_24dp"
+        android:src="@drawable/ic_stop_black_24dp" />
+
+</RelativeLayout>

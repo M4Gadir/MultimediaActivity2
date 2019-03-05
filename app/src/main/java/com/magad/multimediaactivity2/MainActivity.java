@@ -14,5 +14,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Audio(View view) {
-        startActivity(new Intent(MainActivity.this,AudioActivity.class));    }
+        startActivity(new Intent(MainActivity.this, AudioActivity.class));
+    }
+
+    public void Audiosederhana(View view) {
+        startActivity(new Intent(MainActivity.this, AudioSederhanaActivity.class));
+    }
+
+    public void videos(View view) {
+        startActivity(new Intent(MainActivity.this, VideoActivity.class));
+    }
+
+    public void straemaudio(View view) {
+        startActivity(new Intent(MainActivity.this, AudioStreaming.class));
+    }
+
+    public void straemvideo(View view) {
+        startActivity(new Intent(MainActivity.this, VideoStreaming.class));
+    }
 }
